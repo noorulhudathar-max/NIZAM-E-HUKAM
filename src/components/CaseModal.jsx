@@ -204,9 +204,9 @@ export default function CaseModal({ mode, caseData, onClose, onSave, onDelete, o
                 {caseData?.done ? "↩ Reopen" : "✓ Mark as Done"}
               </button>
               <button className="btn btn--primary" onClick={() => onSave("edit_mode")}>Edit Case</button>
-              <button className="btn btn--danger" onClick={handleDelete}>
-                {confirmDel ? "Confirm?" : "Delete Case"}
-              </button>
+<button className="btn btn--danger" onClick={handleDelete} disabled={deleting}>
+  {deleting ? "Deleting…" : confirmDel ? "Confirm?" : "Delete Case"}
+</button>
             </>
           ) : (
             <>
